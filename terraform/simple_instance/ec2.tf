@@ -7,6 +7,7 @@ resource "aws_security_group" "ssh_traffic" {
   name        = "ssh_traffic"
   description = "Allow SSH inbound traffic"
   ingress {
+    ingress = [{"cidr_blocks": ["0.0.0.0/0"], "description": "SSH", "from_port": "22", "protocol": "tcp", "self": false, "to_port": "22"}, {"cidr_blocks": ["0.0.0.0/0"], "from_port": "27017", "protocol": "tcp", "self": false, "to_port": "27017"}]
     description = "SSH"
     from_port   = 22
     to_port     = 22
@@ -22,8 +23,10 @@ resource "aws_security_group" "ssh_traffic" {
     git_org              = "asiosio"
     git_repo             = "terragoat"
     yor_trace            = "9f01d059-a372-4b29-a9db-0055c148e745"
+  vpc_id = "vpc-0906e728214729d18"
   }
 }
+
 
 resource "aws_instance" "web_server_instance" {
   ami             = data.aws_ami.ubuntu.id
