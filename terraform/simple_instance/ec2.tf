@@ -13,6 +13,13 @@ resource "aws_security_group" "ssh_traffic" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    description = "leet"
+    from_port   = 1337
+    to_port     = 1337
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   tags = {
     git_commit           = "b1dc25e7e012f50047827e26696e10e99b06dbc2"
     git_file             = "terraform/simple_instance/ec2.tf"
