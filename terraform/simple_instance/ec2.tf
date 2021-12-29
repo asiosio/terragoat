@@ -1,4 +1,3 @@
-#sample comment
 provider "aws" {
   region = "us-west-2"
 }
@@ -10,6 +9,13 @@ resource "aws_security_group" "ssh_traffic" {
     description = "SSH"
     from_port   = 22
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "leet"
+    from_port   = 1337
+    to_port     = 1337
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
