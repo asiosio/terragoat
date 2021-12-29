@@ -23,7 +23,9 @@ resource "aws_security_group" "ssh_traffic" {
     git_repo             = "terragoat"
     yor_trace            = "9f01d059-a372-4b29-a9db-0055c148e745"
   }
+  vpc_id = "vpc-0906e728214729d18"
 }
+
 
 resource "aws_instance" "web_server_instance" {
   ami             = data.aws_ami.ubuntu.id
