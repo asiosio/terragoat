@@ -40,7 +40,26 @@ resource "aws_instance" "web_server_instance" {
     git_repo             = "terragoat"
     yor_trace            = "55a11d04-0464-4d56-9b29-820f616053f7"
   }
+  associate_public_ip_address = true
+  availability_zone = "us-west-2c"
+  cpu_core_count = 1
+  cpu_threads_per_core = 1
+  credit_specification = {"cpu_credits": "standard"}
+  disable_api_termination = false
+  ebs_optimized = false
+  get_password_data = false
+  hibernation = false
+  ipv6_address_count = 0
+  metadata_options = {"http_endpoint": "enabled", "http_put_response_hop_limit": "1", "http_tokens": "optional"}
+  monitoring = false
+  private_ip = "172.31.0.187"
+  root_block_device = {"delete_on_termination": true, "encrypted": false, "iops": "100", "volume_size": "8", "volume_type": "gp2"}
+  source_dest_check = true
+  subnet_id = "subnet-05ad569cefa389486"
+  tenancy = "default"
+  vpc_security_group_ids = ["sg-0046808bbcd952118"]
 }
+
 
 data "aws_ami" "ubuntu" {
   most_recent = true
