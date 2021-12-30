@@ -1,10 +1,10 @@
-name: yor-trace
+name: IaC tag and trace
 on:
   push:
-    branches:
-      - master
+  pull_request:
+
 jobs:
-  build:
+  yor:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
