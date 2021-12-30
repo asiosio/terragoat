@@ -14,9 +14,9 @@ resource "aws_security_group" "ssh_traffic" {
   }
 
   tags = {
-    git_commit           = "1557179c04a3cf936194808d79ca2ba797fcbf4d"
+    git_commit           = "4059ed880c34ddf8a83b0d65e2d763f51ef722a6"
     git_file             = "terraform/simple_instance/ec2.tf"
-    git_last_modified_at = "2021-12-29 14:48:50"
+    git_last_modified_at = "2021-12-29 13:53:00"
     git_last_modified_by = "91682683+asiosio@users.noreply.github.com"
     git_modifiers        = "91682683+asiosio"
     git_org              = "asiosio"
