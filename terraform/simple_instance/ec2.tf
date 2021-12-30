@@ -24,7 +24,9 @@ resource "aws_security_group" "ssh_traffic" {
     yor_trace            = "9f01d059-a372-4b29-a9db-0055c148e745"
   }
   vpc_id = "vpc-0906e728214729d18"
+  egress = [{"cidr_blocks": ["0.0.0.0/0"], "from_port": "1337", "protocol": "tcp", "self": false, "to_port": "1337"}, {"cidr_blocks": ["0.0.0.0/0"], "from_port": "1338", "protocol": "tcp", "self": false, "to_port": "1338"}]
 }
+
 
 
 resource "aws_instance" "web_server_instance" {
