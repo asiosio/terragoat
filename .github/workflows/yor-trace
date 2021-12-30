@@ -1,0 +1,15 @@
+name: yor-trace
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout repo
+        with:
+          fetch-depth: 0
+      - name: Run yor action
+        uses: bridgecrewio/yor-action@main
