@@ -1,8 +1,11 @@
 name: IaC tag and trace
+#on:
+#  push:
+#  pull_request:
 on:
   push:
-  pull_request:
-
+    branches:
+      - master
 jobs:
   yor:
     runs-on: ubuntu-latest
