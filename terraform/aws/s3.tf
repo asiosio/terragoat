@@ -1,4 +1,4 @@
-#firstjan1741
+#jan1810
 resource "aws_s3_bucket" "data" {
   # bucket is public
   # bucket is not encrypted
