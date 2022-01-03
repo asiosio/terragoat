@@ -1,4 +1,3 @@
-#comment02jan
 provider "aws" {
   region = "us-west-2"
 }
