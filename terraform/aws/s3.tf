@@ -1,4 +1,9 @@
-#firstjan1741
+resource "aws_s3_bucket" "armandbuck" {
+  bucket        = "${local.resource_prefix.value}-data"
+  acl           = "public-read"
+  force_destroy = true
+}
+
 resource "aws_s3_bucket" "data" {
   # bucket is public
   # bucket is not encrypted
